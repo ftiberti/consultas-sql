@@ -40,3 +40,8 @@ from tienda_nube_tunnel.segmentation_track st
 where country = 'MX' 
   and (fecha = '2023-07-31' or fecha = '2023-08-31')
   and st.finance_plan_group = 'FREEMIUM'
+
+  
+  
+  prueba 2
+  
