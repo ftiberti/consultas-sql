@@ -43,5 +43,25 @@ where country = 'MX'
 
   
   
-  prueba 2
   
+  
+select * 
+from tienda_nube_tunnel.segmentation_track st
+where store_id  = 986479
+
+
+SELECT 
+rs.*,
+st.plan_id,
+st.grouping_plan,
+st.finance_plan_group,
+st.sales_90d,
+st.segment,
+st.month_sessions as sessions,
+st.month_on_platform_sales as transactions,
+st.month_on_platform_gmv_lc as gmv_on_platform, 
+st.month_off_platform_gmv_lc as gmv_off_platform
+FROM tienda_nube_tunnel.revenue_by_store rs 
+left join tienda_nube_tunnel.segmentation_track st ON st.store_id = rs.store_id and st.fecha = cast(rs."date" as date) and st.country = rs.country
+where rs.store_id = 986479
+
